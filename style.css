@@ -1,0 +1,69 @@
+.carrossel{
+    display: flex;
+    justify-content: center;
+}
+
+.carrossel .carrossel-wrapper{
+    max-width: 400px;
+    height: 600px;
+    position: relative;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.carrossel .carrossel-item img{
+    object-fit: cover;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;    
+}
+
+.carrossel .carrossel-item,
+.carrossel .hidden-item{
+    display: none;
+    animation: fadeVisibility 0.5s;
+}
+
+.carrossel .visible-item{
+    display: block;
+}
+
+.prev-btn, .next-btn{
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    width: 2.5rem;
+    height: 2rem;
+    border-radius: 99px;
+    border: none;
+    outline: 3px solid #fff;
+    background-color: #555;
+    color: #f0f0f0;
+    transition: all .5s ease-in-out;
+}
+
+.prev-btn:hover, .next-btn:hover{
+    cursor: pointer;
+    background-color: #888;
+    color: black;
+}
+
+.prev-btn{
+    left: -1.25rem
+    
+}
+
+.next-btn{
+    right: -1.25rem;
+}
+
+@keyframes fadeVisibility{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
