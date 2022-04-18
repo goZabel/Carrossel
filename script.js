@@ -1,30 +1,30 @@
-const slides = document.querySelectorAll('.carrossel-item')
 const nextButton = document.querySelector('.next-btn')
 const prevButton = document.querySelector('.prev-btn')
+const slide = document.querySelectorAll('.carrossel-item')
 
 let currentSlideIndex = 0
-const lastSlideIndex = slides.length -1
+const lastSlideIndex = slide.length - 1
 
-const manipulateSlideIndex = correctSlideIndex => {
-    slides.forEach(slide =>{
+const manipulateClasses = correctSlideIndex =>{
+    slide.forEach(slide =>{
         slide.classList.remove('visible-item')
     })
 
-    slides[correctSlideIndex].classList.add('visible-item')
+    slide[correctSlideIndex].classList.add('visible-item')
 }
 
 nextButton.addEventListener('click', () => {
-    let correctSlideIndex = currentSlideIndex == lastSlideIndex
+    let correctSlideIndex = currentSlideIndex == lastSlideIndex 
     ? currentSlideIndex = 0
     : ++currentSlideIndex
 
-    manipulateSlideIndex(correctSlideIndex)
+    manipulateClasses(correctSlideIndex)
 })
 
-prevButton.addEventListener('click', () => {
+prevButton.addEventListener('click', () =>{
     let correctSlideIndex = currentSlideIndex == 0
     ? currentSlideIndex = lastSlideIndex
     : --currentSlideIndex
 
-    manipulateSlideIndex(correctSlideIndex)
+    manipulateClasses(correctSlideIndex)
 })
